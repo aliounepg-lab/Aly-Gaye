@@ -113,6 +113,30 @@ const TYPE_LABELS = {
   prayer: "Prayer",
 };
 
+/* ---- icon markup (inline SVG, matches the tab icon set) ------------- */
+
+const PANEL_ICONS = {
+  regular:
+    '<svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><line x1="3.5" y1="9.5" x2="20.5" y2="9.5"/><line x1="8" y1="3" x2="8" y2="6.5"/><line x1="16" y1="3" x2="16" y2="6.5"/></svg>',
+  pd:
+    '<svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.2 1 2.5h6c0-1.3.3-1.8 1-2.5A6 6 0 0 0 12 3Z"/></svg>',
+  spring:
+    '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.2"/><circle cx="12" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="12" r="3"/></svg>',
+  summer:
+    '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="1.5" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22.5" y2="12"/><line x1="4.6" y1="4.6" x2="6.7" y2="6.7"/><line x1="17.3" y1="17.3" x2="19.4" y2="19.4"/><line x1="4.6" y1="19.4" x2="6.7" y2="17.3"/><line x1="17.3" y1="6.7" x2="19.4" y2="4.6"/></svg>',
+};
+
+const TYPE_ICONS = {
+  class:
+    '<svg viewBox="0 0 24 24"><path d="M12 6.5c-1.8-1.4-4.2-2-7-2v13c2.8 0 5.2.6 7 2 1.8-1.4 4.2-2 7-2v-13c-2.8 0-5.2.6-7 2Z"/><line x1="12" y1="6.5" x2="12" y2="19.5"/></svg>',
+  break:
+    '<svg viewBox="0 0 24 24"><path d="M5 9h11v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V9Z"/><path d="M16 10.5h1.5a2.2 2.2 0 0 1 0 4.4H16"/><line x1="7" y1="4.5" x2="7" y2="7"/><line x1="10.5" y1="3.5" x2="10.5" y2="7"/></svg>',
+  lunch:
+    '<svg viewBox="0 0 24 24"><path d="M7 3v6a2 2 0 0 0 2 2v10"/><path d="M7 3v6"/><path d="M9 3v6"/><path d="M17 3c-1.7 0-3 2-3 5s1.3 5 3 5"/><path d="M17 3v18"/></svg>',
+  prayer:
+    '<svg viewBox="0 0 24 24"><path d="M15.5 3.5a7.5 7.5 0 1 0 5 12.9A7.5 7.5 0 0 1 15.5 3.5Z"/><path d="M19.5 3.5l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6z"/></svg>',
+};
+
 /* ---- helpers ------------------------------------------------------- */
 
 function parseTimeToMinutes(str) {
@@ -145,6 +169,7 @@ function renderSchedule(key) {
   const data = SCHEDULES[key];
   if (!data) return;
 
+  document.getElementById("panel-icon").innerHTML = PANEL_ICONS[key] || "";
   document.getElementById("panel-title").textContent = data.label;
   document.getElementById("panel-title-ar").textContent = data.labelAr || "";
   document.getElementById("panel-subtitle").textContent = data.subtitle || "";
@@ -197,7 +222,7 @@ function renderSchedule(key) {
     if (isNow) tr.classList.add("row-now");
 
     tr.innerHTML = `
-      <td class="cell-type"><span class="dot dot-${p.type}"></span>${TYPE_LABELS[p.type]}</td>
+      <td class="cell-type"><span class="type-icon type-${p.type}">${TYPE_ICONS[p.type]}</span>${TYPE_LABELS[p.type]}</td>
       <td class="cell-name">${p.name}${isNow ? '<span class="now-badge">Now</span>' : ""}</td>
       <td class="cell-time">${p.start} – ${p.end}</td>
       <td class="cell-duration">${formatDuration(duration)}</td>

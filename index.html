@@ -4,43 +4,94 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IQRA Bilingual Academy — School Schedule</title>
+  <meta name="description" content="Bell schedules for IQRA Bilingual Academy: Daily Schedule, Professional Development Days, Spring Break Classes, and Summer School." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%230f6b4f%22%2F%3E%3Cg%20fill%3D%22%23e2c766%22%3E%3Crect%20x%3D%2216%22%20y%3D%2216%22%20width%3D%2232%22%20height%3D%2232%22%2F%3E%3Crect%20x%3D%2216%22%20y%3D%2216%22%20width%3D%2232%22%20height%3D%2232%22%20transform%3D%22rotate%2845%2032%2032%29%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%2245%22%20cy%3D%2220%22%20r%3D%227%22%20fill%3D%22%23e2c766%22%2F%3E%3Ccircle%20cx%3D%2248.5%22%20cy%3D%2217%22%20r%3D%226%22%20fill%3D%22%230f6b4f%22%2F%3E%3C%2Fsvg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <div class="bg-watermark" aria-hidden="true">
+    <svg width="100%" height="100%" preserveAspectRatio="xMidYMin slice">
+      <defs>
+        <pattern id="lattice" width="64" height="64" patternUnits="userSpaceOnUse">
+          <rect x="16" y="16" width="32" height="32" fill="none" stroke="#0f6b4f" stroke-width="1" />
+          <rect x="16" y="16" width="32" height="32" fill="none" stroke="#0f6b4f" stroke-width="1" transform="rotate(45 32 32)" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#lattice)" />
+    </svg>
+  </div>
+
   <header class="site-header">
+    <div class="header-glow" aria-hidden="true"></div>
     <div class="header-inner">
       <div class="brand">
-        <div class="brand-mark">IQ</div>
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <g fill="#0f6b4f">
+              <rect x="16" y="16" width="32" height="32" />
+              <rect x="16" y="16" width="32" height="32" transform="rotate(45 32 32)" />
+            </g>
+            <circle cx="45" cy="20" r="7" fill="#0f6b4f" />
+            <circle cx="48.5" cy="17" r="6" fill="#c9a227" />
+          </svg>
+        </div>
         <div class="brand-text">
           <h1>IQRA Bilingual Academy</h1>
           <div class="brand-ar">أكاديمية إقرأ ثنائية اللغة</div>
-          <div class="brand-tagline">School Schedules &amp; Bell Times</div>
+          <div class="brand-tagline">Guiding Our Students Through Every School Day</div>
         </div>
       </div>
       <div class="header-clock">
-        Current Time
-        <span id="live-clock">--:--</span>
+        <svg class="clock-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3.5 2" /></svg>
+        <div>
+          <span class="clock-label">Current Time</span>
+          <span id="live-clock">--:--</span>
+        </div>
       </div>
     </div>
+    <svg class="header-crenellation" viewBox="0 0 1248 24" preserveAspectRatio="none" aria-hidden="true">
+      <polygon points="0,24 0,18 8,18 8,12 16,12 16,6 32,6 32,12 40,12 40,18 48,18 48,24 48,24 48,18 56,18 56,12 64,12 64,6 80,6 80,12 88,12 88,18 96,18 96,24 96,24 96,18 104,18 104,12 112,12 112,6 128,6 128,12 136,12 136,18 144,18 144,24 144,24 144,18 152,18 152,12 160,12 160,6 176,6 176,12 184,12 184,18 192,18 192,24 192,24 192,18 200,18 200,12 208,12 208,6 224,6 224,12 232,12 232,18 240,18 240,24 240,24 240,18 248,18 248,12 256,12 256,6 272,6 272,12 280,12 280,18 288,18 288,24 288,24 288,18 296,18 296,12 304,12 304,6 320,6 320,12 328,12 328,18 336,18 336,24 336,24 336,18 344,18 344,12 352,12 352,6 368,6 368,12 376,12 376,18 384,18 384,24 384,24 384,18 392,18 392,12 400,12 400,6 416,6 416,12 424,12 424,18 432,18 432,24 432,24 432,18 440,18 440,12 448,12 448,6 464,6 464,12 472,12 472,18 480,18 480,24 480,24 480,18 488,18 488,12 496,12 496,6 512,6 512,12 520,12 520,18 528,18 528,24 528,24 528,18 536,18 536,12 544,12 544,6 560,6 560,12 568,12 568,18 576,18 576,24 576,24 576,18 584,18 584,12 592,12 592,6 608,6 608,12 616,12 616,18 624,18 624,24 624,24 624,18 632,18 632,12 640,12 640,6 656,6 656,12 664,12 664,18 672,18 672,24 672,24 672,18 680,18 680,12 688,12 688,6 704,6 704,12 712,12 712,18 720,18 720,24 720,24 720,18 728,18 728,12 736,12 736,6 752,6 752,12 760,12 760,18 768,18 768,24 768,24 768,18 776,18 776,12 784,12 784,6 800,6 800,12 808,12 808,18 816,18 816,24 816,24 816,18 824,18 824,12 832,12 832,6 848,6 848,12 856,12 856,18 864,18 864,24 864,24 864,18 872,18 872,12 880,12 880,6 896,6 896,12 904,12 904,18 912,18 912,24 912,24 912,18 920,18 920,12 928,12 928,6 944,6 944,12 952,12 952,18 960,18 960,24 960,24 960,18 968,18 968,12 976,12 976,6 992,6 992,12 1000,12 1000,18 1008,18 1008,24 1008,24 1008,18 1016,18 1016,12 1024,12 1024,6 1040,6 1040,12 1048,12 1048,18 1056,18 1056,24 1056,24 1056,18 1064,18 1064,12 1072,12 1072,6 1088,6 1088,12 1096,12 1096,18 1104,18 1104,24 1104,24 1104,18 1112,18 1112,12 1120,12 1120,6 1136,6 1136,12 1144,12 1144,18 1152,18 1152,24 1152,24 1152,18 1160,18 1160,12 1168,12 1168,6 1184,6 1184,12 1192,12 1192,18 1200,18 1200,24 1200,24 1200,18 1208,18 1208,12 1216,12 1216,6 1232,6 1232,12 1240,12 1240,18 1248,18 1248,24" />
+    </svg>
   </header>
 
   <nav class="tabs" role="tablist" aria-label="Schedule type">
-    <button class="tab-btn" data-schedule="regular" role="tab">Daily Schedule</button>
-    <button class="tab-btn" data-schedule="pd" role="tab">Professional Development Day</button>
-    <button class="tab-btn" data-schedule="spring" role="tab">Spring Break Classes</button>
-    <button class="tab-btn" data-schedule="summer" role="tab">Summer School</button>
+    <button class="tab-btn" data-schedule="regular" role="tab">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2" /><line x1="3.5" y1="9.5" x2="20.5" y2="9.5" /><line x1="8" y1="3" x2="8" y2="6.5" /><line x1="16" y1="3" x2="16" y2="6.5" /></svg>
+      Daily Schedule
+    </button>
+    <button class="tab-btn" data-schedule="pd" role="tab">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6" /><path d="M10 21h4" /><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.2 1 2.5h6c0-1.3.3-1.8 1-2.5A6 6 0 0 0 12 3Z" /></svg>
+      Professional Development Day
+    </button>
+    <button class="tab-btn" data-schedule="spring" role="tab">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2.2" /><circle cx="12" cy="6" r="3" /><circle cx="12" cy="18" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="12" r="3" /></svg>
+      Spring Break Classes
+    </button>
+    <button class="tab-btn" data-schedule="summer" role="tab">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" /><line x1="12" y1="1.5" x2="12" y2="4.5" /><line x1="12" y1="19.5" x2="12" y2="22.5" /><line x1="1.5" y1="12" x2="4.5" y2="12" /><line x1="19.5" y1="12" x2="22.5" y2="12" /><line x1="4.6" y1="4.6" x2="6.7" y2="6.7" /><line x1="17.3" y1="17.3" x2="19.4" y2="19.4" /><line x1="4.6" y1="19.4" x2="6.7" y2="17.3" /><line x1="17.3" y1="6.7" x2="19.4" y2="4.6" /></svg>
+      Summer School
+    </button>
   </nav>
 
   <main>
     <section class="panel">
       <div class="panel-header">
         <div class="panel-header-text">
-          <h2 id="panel-title">Daily Schedule</h2>
+          <div class="panel-title-row">
+            <span id="panel-icon" class="panel-icon" aria-hidden="true"></span>
+            <h2 id="panel-title">Daily Schedule</h2>
+          </div>
           <span id="panel-title-ar"></span>
           <div id="panel-subtitle"></div>
           <span id="panel-audience"></span>
         </div>
-        <button id="print-btn" class="print-btn">🖨 Print this schedule</button>
+        <button id="print-btn" class="print-btn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3h10v5" /><rect x="4" y="8" width="16" height="8" rx="1.5" /><path d="M7 16h10v5H7z" /></svg>
+          Print this schedule
+        </button>
       </div>
 
       <div id="panel-status" class="status-badge" hidden></div>
@@ -64,7 +115,13 @@
   </main>
 
   <footer class="site-footer">
-    IQRA Bilingual Academy · School hours 8:00 AM – 4:30 PM · Schedules updated for the 2025–2026 school year
+    <svg class="footer-motif" viewBox="0 0 64 64" aria-hidden="true">
+      <g fill="none" stroke="#c9a227" stroke-width="1.5">
+        <rect x="16" y="16" width="32" height="32" />
+        <rect x="16" y="16" width="32" height="32" transform="rotate(45 32 32)" />
+      </g>
+    </svg>
+    <p>IQRA Bilingual Academy · School hours 8:00 AM – 4:30 PM · Schedules updated for the 2026–2027 school year</p>
   </footer>
 
   <script src="js/app.js"></script>
