@@ -38,8 +38,8 @@ const SCHEDULES = {
     labelAr: "يوم التطوير المهني",
     subtitle: "Staff In-Service · No Students",
     audience: "Faculty & Staff Only",
-    status: "sample",
-    note: "Occurs monthly on the 3rd Monday. Session titles/times below are a sample — update per PD day. No PD Day in December 2026 (winter break) or January 2027: the 3rd Monday (Jan 18) falls on Martin Luther King Jr. Day.",
+    status: "official",
+    note: "Occurs monthly on the 3rd Monday. No PD Day in December 2026 (winter break) or January 2027: the 3rd Monday (Jan 18) falls on Martin Luther King Jr. Day.",
     dates: [
       "Mon, Aug 17, 2026",
       "Mon, Sep 21, 2026",
@@ -203,8 +203,6 @@ function renderSchedule(key) {
   tbody.innerHTML = "";
 
   const nowMin = nowMinutes();
-  const today = new Date().getDay(); // 0 = Sun, 6 = Sat
-  const isSchoolDay = today >= 0 && today <= 6; // highlight regardless; only meaningful for "regular"
 
   data.periods.forEach((p) => {
     const startMin = parseTimeToMinutes(p.start);
