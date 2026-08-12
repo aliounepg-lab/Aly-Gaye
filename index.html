@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IQRA Bilingual Academy — School Schedule</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-mark">IQ</div>
+        <div class="brand-text">
+          <h1>IQRA Bilingual Academy</h1>
+          <div class="brand-ar">أكاديمية إقرأ ثنائية اللغة</div>
+          <div class="brand-tagline">School Schedules &amp; Bell Times</div>
+        </div>
+      </div>
+      <div class="header-clock">
+        Current Time
+        <span id="live-clock">--:--</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Schedule type">
+    <button class="tab-btn" data-schedule="regular" role="tab">Daily Schedule</button>
+    <button class="tab-btn" data-schedule="pd" role="tab">Professional Development Day</button>
+    <button class="tab-btn" data-schedule="spring" role="tab">Spring Break Classes</button>
+    <button class="tab-btn" data-schedule="summer" role="tab">Summer School</button>
+  </nav>
+
+  <main>
+    <section class="panel">
+      <div class="panel-header">
+        <div class="panel-header-text">
+          <h2 id="panel-title">Daily Schedule</h2>
+          <span id="panel-title-ar"></span>
+          <div id="panel-subtitle"></div>
+          <span id="panel-audience"></span>
+        </div>
+        <button id="print-btn" class="print-btn">🖨 Print this schedule</button>
+      </div>
+
+      <div id="panel-status" class="status-badge" hidden></div>
+      <p id="panel-note" class="panel-note"></p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Period / Activity</th>
+              <th>Time</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody id="schedule-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    IQRA Bilingual Academy · School hours 8:00 AM – 4:30 PM · Schedules updated for the 2025–2026 school year
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
