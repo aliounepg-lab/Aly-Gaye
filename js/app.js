@@ -39,7 +39,19 @@ const SCHEDULES = {
     subtitle: "Staff In-Service · No Students",
     audience: "Faculty & Staff Only",
     status: "sample",
-    note: "Sample template — update session titles and times for each specific PD day.",
+    note: "Occurs monthly on the 3rd Monday. Session titles/times below are a sample — update per PD day. No PD Day in January 2027: the 3rd Monday (Jan 18) falls on Martin Luther King Jr. Day.",
+    dates: [
+      "Mon, Aug 17, 2026",
+      "Mon, Sep 21, 2026",
+      "Mon, Oct 19, 2026",
+      "Mon, Nov 16, 2026",
+      "Mon, Dec 21, 2026",
+      "Mon, Feb 15, 2027",
+      "Mon, Mar 15, 2027",
+      "Mon, Apr 19, 2027",
+      "Mon, May 17, 2027",
+      "Mon, Jun 21, 2027",
+    ],
     periods: [
       { type: "class", name: "Staff Check-In",                 start: "8:00 AM",  end: "8:30 AM" },
       { type: "class", name: "Session 1",                      start: "8:30 AM",  end: "10:00 AM" },
@@ -59,7 +71,8 @@ const SCHEDULES = {
     subtitle: "Optional Enrichment Program · Half Day",
     audience: "Enrolled Students Only",
     status: "sample",
-    note: "Sample template — confirm dates, grade groupings, and activities before publishing.",
+    note: "Dates confirmed below. Daily schedule (sessions/times) is still a sample — confirm grade groupings and activities before publishing.",
+    dates: ["Mon, Mar 22, 2027 – Fri, Mar 26, 2027"],
     periods: [
       { type: "class", name: "Drop-Off / Arrival", start: "8:45 AM",  end: "9:00 AM" },
       { type: "class", name: "Session 1",          start: "9:00 AM",  end: "9:50 AM" },
@@ -143,6 +156,20 @@ function renderSchedule(key) {
     badge.hidden = true;
   }
 
+  const datesWrap = document.getElementById("panel-dates");
+  datesWrap.innerHTML = "";
+  if (data.dates && data.dates.length) {
+    datesWrap.hidden = false;
+    data.dates.forEach((d) => {
+      const chip = document.createElement("span");
+      chip.className = "date-chip";
+      chip.textContent = d;
+      datesWrap.appendChild(chip);
+    });
+  } else {
+    datesWrap.hidden = true;
+  }
+
   const tbody = document.getElementById("schedule-body");
   tbody.innerHTML = "";
 
@@ -194,6 +221,11 @@ function init() {
 
   document.getElementById("print-btn").addEventListener("click", () => {
     window.print();
+  });
+
+  window.addEventListener("hashchange", () => {
+    const key = window.location.hash.replace("#", "");
+    if (SCHEDULES[key]) setActiveTab(key);
   });
 
   const hashKey = window.location.hash.replace("#", "");

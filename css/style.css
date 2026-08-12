@@ -269,6 +269,24 @@ main {
   font-style: italic;
 }
 
+.dates-list {
+  margin: 0.85rem 1.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.date-chip {
+  background: var(--green-100);
+  color: var(--green-900);
+  border: 1px solid var(--green-600);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
 /* ---------------- Table ---------------- */
 
 .table-wrap {
