@@ -89,7 +89,8 @@ const SCHEDULES = {
     subtitle: "Summer Session · Half-Day Program",
     audience: "Enrolled Students Only",
     status: "sample",
-    note: "Sample template — adjust to the approved summer session calendar and course blocks.",
+    note: "Dates confirmed below (Monday–Friday, weekly). Daily schedule (periods/times) is still a sample — confirm course blocks before publishing.",
+    dates: ["Mon, Jul 5, 2027 – Fri, Aug 13, 2027"],
     periods: [
       { type: "class", name: "Drop-Off / Arrival", start: "8:15 AM",  end: "8:30 AM" },
       { type: "class", name: "Period 1",           start: "8:30 AM",  end: "9:20 AM" },
